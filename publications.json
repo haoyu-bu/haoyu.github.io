@@ -26,7 +26,7 @@
   },
   {
     "title": "Reason to Contrast: A Cascaded Multimodal Retrieval Framework",
-    "authors": "Xuanming Cui, Hong-You Chen, Hao Yu, Hao Yuan, Zihao Wang, Shlok Kumar Mishra, Hanchao Yu, Yonghuan Yang, Jun Xiao, Ser-Nam Lim, Jianpeng Cheng, Qi Guo, Xiangjun Fan",
+    "authors": "Xuanming Cui, Hong-You Chen, Hao Yu, Hao  Yuan, Zihao Wang, Shlok Kumar Mishra, Hanchao Yu, Yonghuan Yang, Jun Xiao, Ser-Nam Lim, Jianpeng Cheng, Qi Guo, Xiangjun Fan",
     "venue": "arXiv preprint arXiv:2602.23369",
     "year": 2026,
     "note": "",
@@ -39,7 +39,7 @@
   {
     "title": "CAFe: Unifying Representation and Generation with Contrastive-Autoregressive Finetuning",
     "authors": "Hao Yu, Zhuokai Zhao, Shen Yan, Lukasz Korycki, Jianyu Wang, Baosheng He, Jiayi Liu, Lizhu Zhang, Xiangjun Fan, Hanchao Yu",
-    "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), Findings",
+    "venue": "Findings of the International Conference on Computer Vision (ICCV)",
     "year": 2025,
     "note": "",
     "featured": true,
@@ -53,7 +53,7 @@
   {
     "title": "Data Bias Mitigation and Evaluation Framework for Diffusion-based Generative Face Models",
     "authors": "Hao Yu, Margrit Betke, Sarah Adel Bargal",
-    "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), STREAM",
+    "venue": "IEEE/CVF International Conference on Computer Vision (ICCV) Workshop (Oral)",
     "year": 2025,
     "note": "",
     "featured": true,
