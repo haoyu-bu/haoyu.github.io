@@ -1,209 +1,272 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv= "Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hao Yu — Research Scientist at Meta. Multimodal learning, generative models, computer vision, affective computing, and AI for education." />
+  <meta name="author" content="Hao Yu" />
   <title>Hao Yu</title>
-  <link href="./templates/css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./templates/normalize.css">
-  <link rel="stylesheet" href="./templates/skeleton.css">
-  <link rel="stylesheet" href="./templates/main.css">
   <style>
-  #me { border : 0 solid black; border-radius : 10px; }
-  .test::after {
-      content: "";
-      display: block;
-      background: linear-gradient(to right, #000000, #999);
-      width: 100%;
-      height: 1px;
-  }
+    :root {
+      --text: #222;
+      --muted: #666;
+      --link: #0645ad;
+      --border: #ddd;
+      --bg: #fff;
+      --soft: #f7f7f7;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+
+    header { border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .name-small { font-weight: 600; color: #111; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .nav-links a { color: #333; }
+
+    main { padding-bottom: 3rem; }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+
+    .portrait { width: 180px; border-radius: 4px; border: 1px solid var(--border); }
+
+    h1, h2, h3 { font-weight: 600; line-height: 1.25; color: #111; }
+    h1 { margin: 0 0 0.35rem; font-size: 2.2rem; }
+
+    .title, .links, .year, .pub-links, footer {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .title { margin: 0 0 0.75rem; color: var(--muted); font-size: 1.05rem; }
+    .links { margin: 0.7rem 0 1.2rem; font-size: 0.95rem; }
+
+    section { margin: 2rem 0; padding-top: 0.3rem; }
+    h2 { font-size: 1.35rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin: 0 0 1rem; }
+    h3 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+    p { margin: 0 0 1rem; }
+    ul { margin: 0.2rem 0 0 1.25rem; padding: 0; }
+    li { margin: 0.35rem 0; }
+
+    .news-list, .service-list, .teaching-list { list-style: none; margin-left: 0; }
+    .news-list li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.7rem; margin: 0.45rem 0; }
+    .year { color: var(--muted); font-size: 0.92rem; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .pub-year { margin: 1.6rem 0 0.75rem; font-size: 1.15rem; }
+    .pub-list { list-style: none; margin: 0; padding: 0; }
+    .pub-item { margin: 0 0 1.15rem; padding: 0 0 1.1rem; border-bottom: 1px solid #eee; }
+    .pub-title { font-weight: 600; color: #111; }
+    .pub-authors { margin-top: 0.18rem; }
+    .pub-authors strong { font-weight: 700; }
+    .venue { font-style: italic; }
+    .note { color: var(--muted); font-size: 0.96rem; }
+    .pub-links { margin-top: 0.28rem; font-size: 0.9rem; }
+    .pub-links a { margin-right: 0.75rem; }
+    .featured-list { list-style: none; margin: 0; padding: 0; }
+    .featured-list .pub-item { background: var(--soft); border: 1px solid #e7e7e7; border-radius: 4px; padding: 0.85rem 1rem; margin-bottom: 0.8rem; }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; padding: 1.5rem 0 2.5rem; }
+
+    @media (max-width: 720px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .profile { grid-template-columns: 1fr; gap: 1rem; }
+      .portrait { width: 150px; }
+      .two-col { grid-template-columns: 1fr; gap: 0.5rem; }
+      .news-list li { grid-template-columns: 3.8rem 1fr; }
+    }
   </style>
-    <link rel="stylesheet" href="templates/main.css">
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="column" style="margin-top: 10%">
-
-        <table>
-		<tr>
-				<td width="25%">
-						<div class="two" id = 'ccc_image'><img src='./portrait.jpg' width=200px id = 'me'></div>
-						</td>
-		<td width="75%">
-		<h1 style="margin-bottom:0">Hao Yu</h1>
-		<h5>Research Scientist<br>Meta<br></h5>
-    <h6>
-      Email: yuhao [at] meta.com<br>
-       <a href="./cv.pdf">CV</a> 
-      / <a href="https://www.linkedin.com/in/hao-yu-a1a319191/">Linkedin</a> / <a href="https://github.com/haoyu-bu">Github</a> 
-      / <a href="https://scholar.google.com/citations?user=6dDUJ9MAAAAJ&hl=en">Google Scholar</a></h6>
-		</td>
-
-        </tr>
-        </table>
-
-
-        <p style="text-align:justify">
-          Hi there! I am currently a Research Scientist at Meta. I obtained my PhD in Computer Science at Boston University advised by Professor <a href="http://www.cs.bu.edu/faculty/betke/">Margrit Betke</a>.</h2>
-		  Prior to that, I obtained my B.S. in Computer Science at Zhejiang University. 2019 Spring, I interned with Prof. <a href="https://tsim49.wixsite.com/terencesim">Terence Sim</a> at National University of Singapore. I have also worked with Prof. <a href="https://web.cs.ucdavis.edu/~yjlee/">Yong Jae Lee</a> as a summer research student at UC Davis in 2018.
-        </p>
-          <p  style="text-align:justify">
-		  My primary interests are in (multimodal) large language models, computer vision, human-computer interaction, and applications of machine learning.
-        </p>
-	</p>
-          <p  style="text-align:justify">
-        </p>
-<!--
-          <div class="test">
-              <h3>Education</h3>
-          </div>
-
-            <br>
-          <li>Ph.D. Student in Computer Science at Boston University (Sep 2019 - Present)</li>
-
-          <li>B.S. in Computer Science at Zhejiang University (Sep 2015 - June 2019) </li>
-
-            <br>
--->
-            <div class="test">      
-                  <h3>Teaching</h3>
-              </div>
-    
-                <br>
-              <li>Image and Video Computing (CS 585), Head Teaching Fellow, Boston University (2024 Spring)</li>
-              <li>Image and Video Computing (CS 585), Teaching Fellow, Boston University (2021 Spring, 2022 Spring)</li>
-	      <li>Data Science Tools and Applications (CS 506), Teaching Fellow, Boston University (2024 Fall)</li>
-              <li>Machine Learning (CS 542), Teaching Fellow, Boston University (2023 Spring, 2023 Fall)</li>
-              <li>Intro to Computer Science (CS 112), Teaching Fellow, Boston University (2020 Spring, 2023 Summer)</li>
-              
-                <br>
-
-          <div class="test">
-              <h3>Research Projects</h3>
-          </div>
-          <br>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-             <tr>
-                  <td width="25%">
-                      <div class="two" id = 'ccc_image'><img src='./fig/epatt.png' width=300px></div>
-                  </td>
-                  <td valign="top" width="75%">
-                      <p  style="text-align:justify"> <a href="https://link.springer.com/chapter/10.1007/978-3-031-64299-9_14">
-                          <papertitle>Affect Behavior Prediction: Using Transformers and Timing Information to Make Early Predictions of Student Exercise Outcome.</papertitle></a><br>
-		  In this work, we propose a novel approach for predicting the outcome of a student solving a mathematics problem in an intelligent tutor using early visual and tabular cues. Our approach analyzes only the first several seconds of a student’s problem-solving process captured in a video feed, along with timing information obtained from their learning log. 
-		  </td>
-              </tr>
-             <tr>
-                  <td width="25%">
-                      <div class="two" id = 'ccc_image'><img src='./fig/coves0.png' width=300px></div>
-                  </td>
-                  <td valign="top" width="75%">
-                      <p  style="text-align:justify"> <a href="https://cs-people.bu.edu/haoyu/projects/COVES/">
-                          <papertitle>COVES: A Cognitive-Affective Deep Model that Personalizes Math Problem Difficulty in Real Time and Improves Student
-Engagement with an Online Tutor.</papertitle></a><br>
-			   We propose a computer vision enhanced problem selector (COVES), a deep learning model to select a personalized difficulty level for each student. A combination of visual information and traditional log data is used to predict student-problem interactions, which are then used to guide problem difficulty selection in real time.
-                  </td>
-              </tr>
-            <tr>
-                  <td width="25%">
-                      <div class="two" id = 'ccc_image'><img src='./fig/gaze.png' width=300px></div>
-                  </td>
-                  <td valign="top" width="75%">
-                      <p style="text-align:justify"> <a href="https://dl.acm.org/doi/abs/10.1007/978-3-030-77873-6_16">
-                          <papertitle>Measuring and Integrating Facial Expressions and Gaze as Indicators of Engagement and Affect in Tutoring Systems</papertitle></a><br>
-                           In this work, we conducted two studies using computer vision techniques to measure students’ engagement and affective states from their head pose
-                              and facial expressions, as they use an online tutoring system, MathSpring.org. 
-                  </td>
-              </tr>
-              <tr>
-                <td width="25%">
-                    <div class="two" id = 'ccc_image'><img src='./fig/grit.png' width=300px></div>
-                </td>
-                <td valign="top" width="75%">
-                    <p style="text-align:justify"><a href="https://ieeexplore.ieee.org/abstract/document/9906410">
-                        <papertitle>Leveraging Affect Transfer Learning for Behavior Prediction in an
-                          Intelligent Tutoring System</papertitle></a><br>
-                        We propose a video-based transfer 
-                        learning approach for predicting problem outcomes of students
-                        working with an intelligent tutoring system (ITS). By analyzing
-                        a student’s face and gestures, our method predicts the outcome
-                        of a student answering a problem in an ITS from a video feed. 
-                </td>
-            </tr>
-              <tr>
-                  <td width="25%">
-                      <div class="two" id = 'ccc_image'><img src='./fig/candidate.png' width=300px></div>
-                  </td>
-                  <td valign="top" width="75%">
-                      <p style="text-align:justify"><a>
-                          <papertitle>The Effect of Television News Portrayals of Political Candidates</papertitle></a><br>
-                          <!-- <em></em>, 2021 <br> -->
-                           This study employs state-of-the-art computer vision techniques to collect, process, and analyze a large-scale television video dataset about the six leading candidates of the 2020 Democratic Party presidential primaries in the United States. 
-                            Combining a manual content analysis and deep learning methods, the study develops an automated facial expression recognition (FER) system that detects each candidate’s facial expression portrayed in television news.  
-                  </td>
-              </tr>
-              <tr>
-                  <td width="25%">
-                      <div class="two" id = 'ccc_image'><img src='./fig/HaS.jpg' width=300px></div>
-                  </td>
-                  <td valign="top" width="75%">
-                      <p style="text-align:justify"><a href="https://arxiv.org/abs/1811.02545">
-                          <papertitle>Hide-and-Seek: A Data Augmentation Technique for Weakly-Supervised Localization and Beyond</papertitle></a><br>
-                          We propose 'Hide-and-Seek', a general purpose data augmentation technique.
-                          The key idea is to hide patches in a training image randomly, in order to force the network to seek other relevant content when the most discriminative content is hidden.  We perform extensive experiments to showcase the advantage of Hide-and-Seek on various visual recognition problems, such as image classification, semantic segmentation, and emotion recognition.
-                  </td>
-              </tr>
-          </table>
-
-
-
-          <div class="test">
-              <h3>Publications</h3>
-          </div>
-	  <br>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tbody><tr>
-          <ul>
-	    <li style="text-align:justify">                                                                                                                                      Farid Karimli, <b>Hao Yu</b>, Srishti Jain, Emmanuel Sarpong Akosah, Margrit Betke, and Wenxin Feng. <a href="https://dl.acm.org/doi/10.1145/3663548.3688499"> Demonstration of CameraMouseAI: A Head-Based Mouse-Control System for People with Severe Motor Disabilities.</a> In The 26th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS '24), 2024.                      </li>
-	    <li style="text-align:justify">
-             Lei Guo, H. Denis Wu, <b>Hao Yu</b>, and Margrit Betke. <a href="https://www.tandfonline.com/doi/full/10.1080/15205436.2024.2370562"> The Emotional Power of Partisan Media: A Computer Vision Analysis of the 2020 Democratic Party Presidential Primaries.</a> Mass Communication and Society, 1–23, 2024.
-            </li>
-            <li style="text-align:justify">
-		    <b>Hao Yu</b>, Danielle A. Allessio, William Rebelsky, Tom Murray, John J. Magee, Ivon Arroyo, Beverly P. Woolf, Sarah Adel Bargal, Margrit Betke. <a href="https://link.springer.com/chapter/10.1007/978-3-031-64299-9_14"> Affect Behavior Prediction: Using Transformers and Timing Information to Make Early Predictions of Student Exercise Outcome.</a> In 25th International Conference on Artificial Intelligence in Education (AIED), 2024.
-            </li>
-             <li style="text-align:justify">
-		    <b>Hao Yu</b>, Danielle A. Allessio, Will Lee, William Rebelsky, Frank Sylvia, Tom Murray, John J. Magee, Ivon Arroyo, Beverly P. Woolf, Sarah Adel Bargal, and Margrit Betke. <a href="https://dl.acm.org/doi/10.1145/3581783.3613965"> COVES: A Cognitive-Affective Deep Model that Personalizes Math Problem Difficulty in Real Time and Improves Student Engagement with an Online Tutor. </a> In Proceedings of the 31st ACM International Conference on Multimedia (ACM MM), 2023. 
-	    </li>
-
-	    <li style="text-align:justify">
-		    Maorong Wang, <b>Hao Yu</b>, Ling Xiao, Toshihiko Yamasaki. <a href="https://ieeexplore.ieee.org/abstract/document/10254426?casa_token=MNhUEZytIXoAAAAA:a59zsM9Jwtec9hCgoVSAyNuAj9HehgQIcRn6C25g6w8mpVCppIj1VUhPWzi5Of_ic9cjCfU"> Bridging the Capacity Gap for Online Knowledge Distillation. </a> In 2023 IEEE 6th International Conference on Multimedia Information Processing and Retrieval (MIPR), 2023
-	    </li>
-
-	    <li style="text-align:justify"> Beverly Woolf, Margrit Betke, <b>Hao Yu</b>, Sarah Adel Bargal, Ivon Arroyo, John Magee, Danielle Allessio, William Rebelsky. <a href="https://ceur-ws.org/Vol-3491/paper3.pdf">Face Readers: The Frontier of Computer Vision and Math Learning.</a> In 24th International Conference on Artificial Intelligence in Education Workshop (AIED Workshop), 2023. 
-	    </li>
-	    
-	    <li style="text-align:justify"> Nataniel Ruiz*, <b>Hao Yu*</b>, Danielle A.\ Allessio, Mona Jalal, Ajjen Joshi, Tom Murray, John J.\ Magee, Kevin Manuel Delgado, Vitaly Ablavsky, Stan Sclaroff, Ivon Arroyo, Beverly P.\ Woolf, Sarah Adel Bargal, and Margrit Betke. <a href="https://ieeexplore.ieee.org/abstract/document/9906410">ATL-BP: A Student Engagement Dataset and Model for Affect Transfer Learning for Behavior Prediction.</a> In IEEE Transactions on Biometrics, Behavior, and Identity Science, 2022. (*Equal contribution) 
-	    </li>
-
-	    <li style="text-align:justify"> Will Lee, Danielle Allessio, William Rebelsky, Sai Satish Gattupalli, <b>Hao Yu</b>, Ivon Arroyo, Margrit Betke, Sarah Bargal, Tom Murray, Frank Sylvia and Beverly P. Woolf. <a href="https://link.springer.com/chapter/10.1007/978-3-031-05887-5_20">Measurements and Interventions to Improve Student Engagement Through Facial Expression Recognition.</a> In International Conference on Human-Computer Interaction (HCII), 2022.
-	    </li>
-	    
-	    <li style="text-align:justify">  <b>Hao Yu</b>, Ankit Gupta, Will Lee, Ivon Arroyo, Margrit Betke, Danielle Allesio, Tom Murray, John Magee, and Beverly P. Woolf. <a href="https://link.springer.com/chapter/10.1007/978-3-030-77873-6_16">Measuring and Integrating Facial Expressions and Head Pose as Indicators of Engagement and Affect in Tutoring Systems.</a> In International Conference on Human-Computer Interaction (HCII), 2021. 
-	    </li>
-	    
-	    <li  style="text-align:justify">Nataniel Ruiz, <b>Hao Yu</b>, Mona Jalal, Danielle Allessio, Ajjen Joshi, Tom Murray, Vitaly Ablavsky, John Magee, Jacob Whitehill, Ivon Arroyo, Beverly Woolf, Stan Sclaroff, Margrit Betke. <a href="https://arxiv.org/abs/2002.05242">Leveraging Affect Transfer Learning for Behavior Prediction in an Intelligent Tutoring System.</a> In 2021 16th IEEE International Conference on Automatic Face and Gesture Recognition (FG), IEEE, 2021. <b>Best Poster Award (4% award rate)</b>
-	    </li>
-
-	    <li>Kevin Delgado, Juan Manuel Origgi, Tania Hasanpoor, <b>Hao Yu</b>, Danielle Allessio, Ivon Arroyo, William Lee, Margrit Betke, Beverly Woolf, and Sarah Adel Bargal. <a href="https://openaccess.thecvf.com/content/ICCV2021W/ABAW/html/Delgado_Student_Engagement_Dataset_ICCVW_2021_paper.html">Student Engagement Dataset.</a> In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), 2021. 
-	    </li>
-	    
-	    <li  style="text-align:justify"> Krishna Kumar Singh,  <b>Hao Yu</b>, Aron Sarmasi, Gautam Pradeep, and Yong Jae Lee. <a href="https://arxiv.org/abs/1811.02545">Hide-and-seek: A data augmentation technique for weakly-supervised localization and beyond.</a> arXiv preprint arXiv:1811.02545, 2018.
-        </ul>
-      </tr></tbody>
-    </table>
-
-      </div>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <a class="name-small" href="#top">Hao Yu</a>
+        <div class="nav-links">
+          <!-- <a href="#research">Research</a> -->
+          <!-- <a href="#featured">Featured</a> -->
+          <a href="#publications">Publications</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#service">Service</a>
+          <!-- <a href="cv.pdf">CV</a> -->
+        </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
+  <main id="top" class="container">
+    <section class="profile" aria-label="Profile">
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Hao Yu" />
+      <div>
+        <h1>Hao Yu</h1>
+        <p class="title">Research Scientist, Meta<br />Ph.D. in Computer Science, Boston University</p>
+        <p>Email: haopyu [at] gmail.com</p>
+        <p class="links">
+          <!-- <a href="cv.pdf">CV</a> / -->
+          <a href="https://scholar.google.com/citations?user=6dDUJ9MAAAAJ&amp;hl=en">Google Scholar</a> /
+          <a href="https://www.linkedin.com/in/hao-yu-bu/">LinkedIn</a> /
+          <a href="https://github.com/haoyu-bu">GitHub</a>
+        </p>
+        <p>
+          I am a Research Scientist at Meta, where I work on multimodal large language models and foundation models for personalized content understanding, recommendation, and user engagement.
+        </p>
+        <p>
+          I received my Ph.D. in Computer Science from Boston University, advised by Prof. <a href="https://www.cs.bu.edu/faculty/betke/">Margrit Betke</a>. My research interests include multimodal learning, generative models, affective computing, and AI for education. Prior to BU, I received my B.E. in Computer Science from Zhejiang University.
+        </p>
+      </div>
+    </section>
 
-</body></html>
+    <!-- <section id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li><span class="year">2025</span><span>Joined Meta as a Research Scientist.</span></li>
+        <li><span class="year">2025</span><span>Received Ph.D. in Computer Science from Boston University.</span></li>
+        <li><span class="year">2025</span><span>Two papers accepted to WACV 2026.</span></li>
+        <li><span class="year">2025</span><span>Paper accepted to ICCV 2025.</span></li>
+        <li><span class="year">2024</span><span>Received the Boston University Department of Computer Science Research Excellence Award.</span></li>
+        <li><span class="year">2024</span><span>AIED paper nominated for Best Paper Award and Best Student Paper Award.</span></li>
+      </ul>
+    </section> -->
+
+    <!-- <section id="research">
+      <h2>Research Interests</h2>
+      <div class="two-col">
+        <ul>
+          <li>Multimodal large language models and foundation models</li>
+          <li>Generative models and diffusion-based face generation</li>
+        </ul>
+        <ul>
+          <li>Affective computing and behavior understanding</li>
+          <li>AI for education and personalized learning systems</li>
+          <li>User engagement modeling and prediction</li>
+        </ul>
+      </div>
+    </section> -->
+
+    <!-- <section id="featured">
+      <h2>Selected Publications</h2>
+      <div id="featured-publications" class="featured-list" aria-live="polite"></div>
+    </section> -->
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div id="publication-list" aria-live="polite">Loading publications…</div>
+      <p class="note">For the full and most current publication record, please see my <a href="https://scholar.google.com/citations?user=6dDUJ9MAAAAJ&amp;hl=en">Google Scholar profile</a>.</p>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="teaching-list">
+        <li>Teaching Fellow, Data Science Tools and Applications (CS 506), Boston University, Fall 2024.</li>
+        <li>Head Teaching Fellow, Image and Video Computing (CS 585), Boston University, Spring 2024.</li>
+        <li>Teaching Fellow, Principles of Machine Learning (CS 542), Boston University, Spring 2023 and Fall 2023.</li>
+        <li>Teaching Fellow, Image and Video Computing (CS 585), Boston University, Spring 2021 and Spring 2022.</li>
+        <li>Teaching Fellow, Introduction to Computer Science II (CS 112), Boston University, Spring 2020.</li>
+      </ul>
+    </section>
+
+    <section id="awards">
+      <h2>Awards and Honors</h2>
+      <ul>
+        <li>Research Excellence Award, Boston University Department of Computer Science, 2024–2025.</li>
+        <li>AI and Education Initiative Doctoral Fellowship, Rafik B. Hariri Institute for Computing and Computational Science &amp; Engineering, 2024.</li>
+        <li>Best Paper Award and Best Student Paper Award nomination, AIED 2024.</li>
+        <li>Best Poster Award, IEEE FG 2021.</li>
+        <li>First-Class Scholarship for Research and Innovation, Zhejiang University, 2017 and 2018.</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Professional Service</h2>
+      <p>
+        Reviewer for AAAI, CVPR, ACM Multimedia, ECCV, BMVC, FG, and IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI).
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Last updated: July 2026.</div>
+  </footer>
+
+  <script>
+    const escapeHTML = (value) => String(value || '').replace(/[&<>'"]/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    const highlightName = (authors) => escapeHTML(authors).replaceAll('Hao Yu', '<strong>Hao Yu</strong>');
+
+    function renderLinks(links) {
+      if (!links) return '';
+      return Object.entries(links)
+        .map(([label, url]) => `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)}</a>`)
+        .join('');
+    }
+
+    function renderPublication(pub) {
+      const links = renderLinks(pub.links);
+      const firstLink = pub.links ? Object.values(pub.links)[0] : null;
+      const title = firstLink
+        ? `<a class="pub-title" href="${escapeHTML(firstLink)}" target="_blank" rel="noopener noreferrer">${escapeHTML(pub.title)}</a>`
+        : `<span class="pub-title">${escapeHTML(pub.title)}</span>`;
+      return `<li class="pub-item">
+        ${title}
+        <div class="pub-authors">${highlightName(pub.authors)}</div>
+        <div><span class="venue">${escapeHTML(pub.venue)}</span>, ${escapeHTML(pub.year)}.${pub.note ? ` <span class="note">${escapeHTML(pub.note)}</span>` : ''}</div>
+        ${links ? `<div class="pub-links">${links}</div>` : ''}
+      </li>`;
+    }
+
+    function renderPublications(publications) {
+      const featured = publications.filter((pub) => pub.featured);
+      document.getElementById('featured-publications').innerHTML = `<ul class="featured-list">${featured.map(renderPublication).join('')}</ul>`;
+
+      const grouped = publications.reduce((acc, pub) => {
+        acc[pub.year] = acc[pub.year] || [];
+        acc[pub.year].push(pub);
+        return acc;
+      }, {});
+      const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+      document.getElementById('publication-list').innerHTML = years.map((year) => `
+        <h3 class="pub-year">${year}</h3>
+        <ul class="pub-list">${grouped[year].map(renderPublication).join('')}</ul>
+      `).join('');
+    }
+
+    fetch('publications.json')
+      .then((response) => response.json())
+      .then(renderPublications)
+      .catch(() => {
+        document.getElementById('publication-list').innerHTML = '<p class="note">Publication data could not be loaded. Please check <code>publications.json</code>.</p>';
+        document.getElementById('featured-publications').innerHTML = '<p class="note">Publication data could not be loaded.</p>';
+      });
+  </script>
+</body>
+</html>
