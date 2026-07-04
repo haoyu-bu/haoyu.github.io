@@ -216,7 +216,7 @@
   </main>
 
   <footer>
-    <div class="container">Last updated: July 2026.</div>
+    <div class="container">Last updated: June 2026.</div>
   </footer>
 
   <script>
@@ -260,13 +260,234 @@
       `).join('');
     }
 
-    fetch('publications.json')
-      .then((response) => response.json())
-      .then(renderPublications)
-      .catch(() => {
-        document.getElementById('publication-list').innerHTML = '<p class="note">Publication data could not be loaded. Please check <code>publications.json</code>.</p>';
-        document.getElementById('featured-publications').innerHTML = '<p class="note">Publication data could not be loaded.</p>';
-      });
+    const PUBLICATIONS_DATA = [
+    {
+        "title": "Gen-AFFECT: Generation of Avatar Fine-grained Facial Expressions with Consistent identiTy",
+        "authors": "Hao Yu, Rupayan Mallick, Margrit Betke, Sarah Adel Bargal",
+        "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+        "year": 2026,
+        "note": "",
+        "featured": true,
+        "links": {
+            "Paper": "https://openaccess.thecvf.com/content/WACV2026/papers/Yu_Gen-AFFECT_Generation_of_Avatar_Fine-grained_Facial_Expressions_with_Consistent_identiTy_WACV_2026_paper.pdf",
+            "arXiv": "https://arxiv.org/abs/2508.09461",
+            "Supplement": "https://openaccess.thecvf.com/content/WACV2026/supplemental/Yu_Gen-AFFECT_Generation_of_WACV_2026_supplemental.pdf"
+        }
+    },
+    {
+        "title": "GenEAva: Generating Cartoon Avatars with Fine-Grained Facial Expressions from Realistic Diffusion-based Faces",
+        "authors": "Hao Yu, Rupayan Mallick, Margrit Betke, Sarah Adel Bargal",
+        "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshop",
+        "year": 2026,
+        "note": "",
+        "featured": true,
+        "links": {
+            "Paper": "https://openaccess.thecvf.com/content/WACV2026W/SynRDinBAS/papers/Yu_GenEAva_Generating_Cartoon_Avatars_with_Fine-Grained_Facial_Expressions_from_Realistic_WACVW_2026_paper.pdf",
+            "arXiv": "https://arxiv.org/abs/2504.07945"
+        }
+    },
+    {
+        "title": "Reason to Contrast: A Cascaded Multimodal Retrieval Framework",
+        "authors": "Xuanming Cui, Hong-You Chen, Hao Yu, Hao Yuan, Zihao Wang, Shlok Kumar Mishra, Hanchao Yu, Yonghuan Yang, Jun Xiao, Ser-Nam Lim, Jianpeng Cheng, Qi Guo, Xiangjun Fan",
+        "venue": "arXiv preprint arXiv:2602.23369",
+        "year": 2026,
+        "note": "",
+        "featured": false,
+        "links": {
+            "arXiv": "https://arxiv.org/abs/2602.23369",
+            "Scholar": "https://scholar.google.com/scholar?q=Reason+to+Contrast+A+Cascaded+Multimodal+Retrieval+Framework"
+        }
+    },
+    {
+        "title": "CAFe: Unifying Representation and Generation with Contrastive-Autoregressive Finetuning",
+        "authors": "Hao Yu, Zhuokai Zhao, Shen Yan, Lukasz Korycki, Jianyu Wang, Baosheng He, Jiayi Liu, Lizhu Zhang, Xiangjun Fan, Hanchao Yu",
+        "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), Findings",
+        "year": 2025,
+        "note": "",
+        "featured": true,
+        "links": {
+            "Project": "https://haoyu-bu.github.io/CAFeUnify/",
+            "Paper": "https://openaccess.thecvf.com/content/ICCV2025W/Findings/papers/Yu_CAFE_Unifying_Representation_and_Generation_with_Contrastive-Autoregressive_Finetuning_ICCVW_2025_paper.pdf",
+            "arXiv": "https://arxiv.org/abs/2503.19900",
+            "Code": "https://github.com/haoyu-bu/CAFe"
+        }
+    },
+    {
+        "title": "Data Bias Mitigation and Evaluation Framework for Diffusion-based Generative Face Models",
+        "authors": "Hao Yu, Margrit Betke, Sarah Adel Bargal",
+        "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), STREAM",
+        "year": 2025,
+        "note": "",
+        "featured": true,
+        "links": {
+            "Paper": "https://openaccess.thecvf.com/content/ICCV2025W/STREAM/html/Yu_Data_Bias_Mitigation_and_Evaluation_Framework_for_Diffusion-based_Generative_Face_ICCVW_2025_paper.html",
+            "PDF": "https://openaccess.thecvf.com/content/ICCV2025W/STREAM/papers/Yu_Data_Bias_Mitigation_and_Evaluation_Framework_for_Diffusion-based_Generative_Face_ICCVW_2025_paper.pdf",
+            "Code": "https://github.com/haoyu-bu/Data-Bias-Mitigation-and-Evaluation-Framework"
+        }
+    },
+    {
+        "title": "Demonstration of CameraMouseAI: A Head-Based Mouse-Control System for People with Severe Motor Disabilities",
+        "authors": "Farid Karimli*, Hao Yu*, Srishti Jain, Emmanuel Sarpong Akosah, Margrit Betke, Wenxin Feng",
+        "venue": "ACM SIGACCESS Conference on Computers and Accessibility (ASSETS)",
+        "year": 2024,
+        "note": "*Equal contribution.",
+        "featured": false,
+        "links": {
+            "ACM DL": "https://dl.acm.org/doi/10.1145/3663548.3688566",
+            "Scholar": "https://scholar.google.com/scholar?q=Demonstration+of+CameraMouseAI+A+Head-Based+Mouse-Control+System"
+        }
+    },
+    {
+        "title": "Affect Behavior Prediction: Using Transformers and Timing Information to Make Early Predictions of Student Exercise Outcome",
+        "authors": "Hao Yu, Danielle A. Allessio, William Rebelsky, Tom Murray, John J. Magee, Ivon Arroyo, Beverly P. Woolf, Sarah Adel Bargal, Margrit Betke",
+        "venue": "International Conference on Artificial Intelligence in Education (AIED)",
+        "year": 2024,
+        "note": "Nominated for Best Paper Award and Best Student Paper Award.",
+        "featured": true,
+        "links": {
+            "Paper": "https://link.springer.com/chapter/10.1007/978-3-031-64299-9_14",
+            "Scholar": "https://scholar.google.com/scholar?q=Affect+Behavior+Prediction+Using+Transformers+and+Timing+Information"
+        }
+    },
+    {
+        "title": "The emotional power of partisan media: A computer vision analysis of the 2020 Democratic Party presidential primaries",
+        "authors": "Lei Guo, H. Denis Wu, Hao Yu, Margrit Betke",
+        "venue": "Mass Communication and Society",
+        "year": 2024,
+        "note": "",
+        "featured": false,
+        "links": {
+            "DOI": "https://doi.org/10.1080/15205436.2024.2370562",
+            "Scholar": "https://scholar.google.com/scholar?q=The+emotional+power+of+partisan+media+computer+vision+analysis"
+        }
+    },
+    {
+        "title": "COVES: A Cognitive-Affective Deep Model that Personalizes Math Problem Difficulty in Real Time and Improves Student Engagement with an Online Tutor",
+        "authors": "Hao Yu, Danielle A. Allessio, Will Lee, William Rebelsky, Frank Sylvia, Tom Murray, John J. Magee, Ivon Arroyo, Beverly P. Woolf, Sarah Adel Bargal, Margrit Betke",
+        "venue": "ACM Multimedia (ACM MM)",
+        "year": 2023,
+        "note": "",
+        "featured": true,
+        "links": {
+            "ACM DL": "https://dl.acm.org/doi/10.1145/3581783.3613965",
+            "Scholar": "https://scholar.google.com/scholar?q=COVES+Cognitive-Affective+Deep+Model+Personalizes+Math+Problem+Difficulty"
+        }
+    },
+    {
+        "title": "Face Readers: The Frontier of Computer Vision and Math Learning",
+        "authors": "Beverly Woolf, Margrit Betke, Hao Yu, Sarah Adel Bargal, Ivon Arroyo, John Magee, Danielle Allessio, William Rebelsky",
+        "venue": "AIED Workshop",
+        "year": 2023,
+        "note": "",
+        "featured": false,
+        "links": {
+            "PDF": "https://ceur-ws.org/Vol-3491/paper3.pdf",
+            "Proceedings": "https://ceur-ws.org/Vol-3491/"
+        }
+    },
+    {
+        "title": "Bridging the Capacity Gap for Online Knowledge Distillation",
+        "authors": "Maorong Wang, Hao Yu, Ling Xiao, Toshihiko Yamasaki",
+        "venue": "IEEE International Conference on Multimedia Information Processing and Retrieval (MIPR)",
+        "year": 2023,
+        "note": "",
+        "featured": false,
+        "links": {
+            "IEEE": "https://ieeexplore.ieee.org/document/10254426/",
+            "DOI": "https://doi.org/10.1109/MIPR59079.2023.00018"
+        }
+    },
+    {
+        "title": "ATL-BP: A Student Engagement Dataset and Model for Affect Transfer Learning for Behavior Prediction",
+        "authors": "Nataniel Ruiz*, Hao Yu*, Danielle A. Allessio, Mona Jalal, Ajjen Joshi, Tom Murray, John J. Magee, Kevin Manuel Delgado, Vitaly Ablavsky, Stan Sclaroff, Ivon Arroyo, Beverly P. Woolf, Sarah Adel Bargal, Margrit Betke",
+        "venue": "IEEE Transactions on Biometrics, Behavior, and Identity Science",
+        "year": 2023,
+        "note": "*Equal contribution.",
+        "featured": false,
+        "links": {
+            "DOI": "https://doi.org/10.1109/TBIOM.2022.3210479",
+            "Repository": "https://commons.clarku.edu/faculty_computer_sciences/9/"
+        }
+    },
+    {
+        "title": "Measurements and Interventions to Improve Student Engagement Through Facial Expression Recognition",
+        "authors": "Will Lee, Danielle Allessio, William Rebelsky, Sai Satish Gattupalli, Hao Yu, Ivon Arroyo, Margrit Betke et al.",
+        "venue": "International Conference on Human-Computer Interaction (HCII)",
+        "year": 2022,
+        "note": "",
+        "featured": false,
+        "links": {
+            "Springer": "https://link.springer.com/chapter/10.1007/978-3-031-05039-8_21",
+            "Scholar": "https://scholar.google.com/scholar?q=Measurements+and+Interventions+to+Improve+Student+Engagement+Through+Facial+Expression+Recognition"
+        }
+    },
+    {
+        "title": "Measuring and Integrating Facial Expressions and Head Pose as Indicators of Engagement and Affect in Tutoring Systems",
+        "authors": "Hao Yu, Ankit Gupta, Will Lee, Ivon Arroyo, Margrit Betke, Danielle Allesio, Tom Murray, John Magee, Beverly P. Woolf",
+        "venue": "International Conference on Human-Computer Interaction (HCII)",
+        "year": 2021,
+        "note": "",
+        "featured": false,
+        "links": {
+            "DOI": "https://doi.org/10.1007/978-3-030-77873-6_16",
+            "Repository": "https://commons.clarku.edu/faculty_computer_sciences/13/"
+        }
+    },
+    {
+        "title": "Leveraging Affect Transfer Learning for Behavior Prediction in an Intelligent Tutoring System",
+        "authors": "Nataniel Ruiz, Hao Yu, Mona Jalal, Danielle Allessio, Ajjen Joshi, Tom Murray, Vitaly Ablavsky, John Magee, Jacob Whitehill, Ivon Arroyo, Beverly Woolf, Stan Sclaroff, Margrit Betke",
+        "venue": "IEEE International Conference on Automatic Face and Gesture Recognition (FG)",
+        "year": 2021,
+        "note": "Best Poster Award.",
+        "featured": false,
+        "links": {
+            "IEEE": "https://doi.org/10.1109/FG52635.2021.9667001",
+            "PDF": "https://par.nsf.gov/servlets/purl/10346044"
+        }
+    },
+    {
+        "title": "Student Engagement Dataset",
+        "authors": "Kevin Delgado, Juan Manuel Origgi, Tania Hasanpoor, Hao Yu, Danielle Allessio, Ivon Arroyo, William Lee, Margrit Betke, Beverly Woolf, Sarah Adel Bargal",
+        "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+        "year": 2021,
+        "note": "",
+        "featured": false,
+        "links": {
+            "OpenAccess": "https://openaccess.thecvf.com/content/ICCV2021W/ABAW/html/Delgado_Student_Engagement_Dataset_ICCVW_2021_paper.html",
+            "Scholar": "https://scholar.google.com/scholar?q=Student+Engagement+Dataset+Kevin+Delgado+Hao+Yu"
+        }
+    },
+    {
+        "title": "Hide-and-seek: A data augmentation technique for weakly-supervised localization and beyond",
+        "authors": "Krishna Kumar Singh, Hao Yu, Aron Sarmasi, Gautam Pradeep, Yong Jae Lee",
+        "venue": "arXiv preprint arXiv:1811.02545",
+        "year": 2018,
+        "note": "",
+        "featured": false,
+        "links": {
+            "arXiv": "https://arxiv.org/abs/1811.02545"
+        }
+    }
+];
+
+    function loadPublications() {
+      // Directly opening index.html with file:// usually blocks fetch('publications.json').
+      // Use embedded data in that case so the publication list still displays locally.
+      if (window.location.protocol === 'file:') {
+        renderPublications(PUBLICATIONS_DATA);
+        return;
+      }
+
+      fetch('publications.json', { cache: 'no-store' })
+        .then((response) => {
+          if (!response.ok) throw new Error('publications.json not found');
+          return response.json();
+        })
+        .then(renderPublications)
+        .catch(() => renderPublications(PUBLICATIONS_DATA));
+    }
+
+    loadPublications();
   </script>
 </body>
 </html>

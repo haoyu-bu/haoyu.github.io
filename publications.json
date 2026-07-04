@@ -8,7 +8,8 @@
     "featured": true,
     "links": {
       "Paper": "https://openaccess.thecvf.com/content/WACV2026/papers/Yu_Gen-AFFECT_Generation_of_Avatar_Fine-grained_Facial_Expressions_with_Consistent_identiTy_WACV_2026_paper.pdf",
-      "arXiv": "https://arxiv.org/abs/2508.09461"
+      "arXiv": "https://arxiv.org/abs/2508.09461",
+      "Supplement": "https://openaccess.thecvf.com/content/WACV2026/supplemental/Yu_Gen-AFFECT_Generation_of_WACV_2026_supplemental.pdf"
     }
   },
   {
@@ -19,8 +20,8 @@
     "note": "",
     "featured": false,
     "links": {
-      "arXiv": "https://arxiv.org/abs/2504.07945",
-      "Scholar": "https://scholar.google.com/scholar?q=GenEAva+Generating+Cartoon+Avatars+with+Fine-Grained+Facial+Expressions"
+      "Paper": "https://openaccess.thecvf.com/content/WACV2026W/SynRDinBAS/papers/Yu_GenEAva_Generating_Cartoon_Avatars_with_Fine-Grained_Facial_Expressions_from_Realistic_WACVW_2026_paper.pdf",
+      "arXiv": "https://arxiv.org/abs/2504.07945"
     }
   },
   {
@@ -38,7 +39,7 @@
   {
     "title": "CAFe: Unifying Representation and Generation with Contrastive-Autoregressive Finetuning",
     "authors": "Hao Yu, Zhuokai Zhao, Shen Yan, Lukasz Korycki, Jianyu Wang, Baosheng He, Jiayi Liu, Lizhu Zhang, Xiangjun Fan, Hanchao Yu",
-    "venue": "Findings of the International Conference on Computer Vision (ICCV)",
+    "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), Findings",
     "year": 2025,
     "note": "",
     "featured": true,
@@ -52,13 +53,14 @@
   {
     "title": "Data Bias Mitigation and Evaluation Framework for Diffusion-based Generative Face Models",
     "authors": "Hao Yu, Margrit Betke, Sarah Adel Bargal",
-    "venue": "IEEE/CVF International Conference on Computer Vision (ICCV) Workshop",
+    "venue": "IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), STREAM",
     "year": 2025,
     "note": "",
     "featured": true,
     "links": {
       "Paper": "https://openaccess.thecvf.com/content/ICCV2025W/STREAM/html/Yu_Data_Bias_Mitigation_and_Evaluation_Framework_for_Diffusion-based_Generative_Face_ICCVW_2025_paper.html",
-      "PDF": "https://openaccess.thecvf.com/content/ICCV2025W/STREAM/papers/Yu_Data_Bias_Mitigation_and_Evaluation_Framework_for_Diffusion-based_Generative_Face_ICCVW_2025_paper.pdf"
+      "PDF": "https://openaccess.thecvf.com/content/ICCV2025W/STREAM/papers/Yu_Data_Bias_Mitigation_and_Evaluation_Framework_for_Diffusion-based_Generative_Face_ICCVW_2025_paper.pdf",
+      "Code": "https://github.com/haoyu-bu/Data-Bias-Mitigation-and-Evaluation-Framework"
     }
   },
   {
